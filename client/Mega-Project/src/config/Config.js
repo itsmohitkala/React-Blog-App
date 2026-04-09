@@ -9,4 +9,5 @@ class Config{
     CollectionId= String(import.meta.env.VITE_CollectionId)
 }
 
-export default Config;
+const config= new Config();
+export default config;
