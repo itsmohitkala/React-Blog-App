@@ -10,4 +10,4 @@ class Config{
 }
 
 const config= new Config();
-export default new config();
+export default config;
