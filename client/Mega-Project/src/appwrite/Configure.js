@@ -74,6 +74,30 @@ class Configure{
         )
     }
 
+    // File Code 
+
+    async createFile(file){
+        return await this.Bucket.createFile(
+            Config.BucketId,
+            ID.unique(),
+            file
+
+        )
+    }
+
+    async getFile(fileId){
+        return await this.Bucket.getFile(
+            Config.BucketId,
+            fileId,
+        )
+    }
+
+    async deleteFile(fileId){
+        return await this.Bucket.deleteFile(
+            Config.BucketId,
+            fileId,
+        )
+    }
 }
 
 const configure= new Configure();
