@@ -37,7 +37,7 @@ class AuthService{
         }
     }
 
-    async getAccount(){
+    async getUser(){
         try{
             return await this.Account.get();
         } catch(error){
@@ -46,6 +46,8 @@ class AuthService{
       
         
     }
+
+    
 }
 
 const authService= new AuthService();
