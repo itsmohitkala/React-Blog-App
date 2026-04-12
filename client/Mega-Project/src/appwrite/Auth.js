@@ -29,7 +29,7 @@ class AuthService{
         }
     }
 
-    async deleteSession(){
+    async logOut(){
         try{
             return await this.Account.deleteSessions();
         }catch(error){
