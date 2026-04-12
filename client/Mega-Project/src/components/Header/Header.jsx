@@ -1,8 +1,12 @@
-import React from 'react'
+
+import React, { useState } from 'react'
 
 function Header() {
+
+    const [loading, setLoading] = useState(true)
+    const userData= useDispatch()
   return (
-    <div>Header</div>
+  
   )
 }
 
