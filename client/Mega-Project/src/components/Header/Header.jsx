@@ -1,13 +1,9 @@
-
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 function Header() {
-
-  const [loading, setLoading] = useState(true)
-
-
   return (
-    <h1>hi</h1>
+    <div>Header</div>
   )
 }
+
 export default Header
