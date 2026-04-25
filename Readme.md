@@ -67,4 +67,4 @@ The application will be accessible at `http://localhost:5173/` (or the port spec
 
 
 
-25 April- Added Fooer
+25 April- Added Footer
