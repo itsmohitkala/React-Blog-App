@@ -62,4 +62,4 @@ The application will be accessible at `http://localhost:5173/` (or the port spec
 - Component-level routing and layout styling.
 
 ---
-*Created as part of a comprehensive masterclass and self-learning journey.*
+*Created as part of a comprehensive masterclass and self-learning journey.* 
