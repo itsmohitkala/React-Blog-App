@@ -3,7 +3,6 @@ import authService from './appwrite/Auth'
 import Config from './config/Config'
 import { login, logout } from './store/authSlice'
 import { useDispatch } from 'react-redux'
-import { UNSAFE_shouldHydrateRouteLoader } from 'react-router'
 import { Outlet } from 'react-router'
 import { Header, Footer } from './components'
 
@@ -35,7 +34,7 @@ function App() {
           <main>
             Todo: <Outlet />
           </main>
-          <Footer />
+         <Footer/>
         </div>
       </div>
     )
