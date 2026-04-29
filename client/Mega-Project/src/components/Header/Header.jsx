@@ -43,9 +43,9 @@ function Header() {
   return (
   <header> 
     <Container className={"flex items-center justify-between py-4"}>
-      <nav>
-        <Link>
-          <Logo width='80px'/>
+      <nav >
+        <Link to='/'>
+          <Logo width='80px' />
         </Link>
       </nav>
 
