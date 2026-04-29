@@ -41,7 +41,7 @@ class AuthService{
         try{
             return await this.Account.get();
         } catch(error){
-            throw new Error(error);
+            console.log(error);
         }
       
         

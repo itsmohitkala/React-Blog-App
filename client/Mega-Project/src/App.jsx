@@ -35,7 +35,7 @@ function App() {
           <main>
             Todo: <Outlet />
           </main>
-          <Footer />
+         <Footer/>
         </div>
       </div>
     )
