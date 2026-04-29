@@ -51,7 +51,7 @@ function Header() {
 
     <ul>
       {navItems.map((item)=>{
-        item.active ? (
+        return item.active ? (
           <li key={item.name} >
         <button onClick={()=>{
           navigate(item.slug)
