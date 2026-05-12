@@ -98,6 +98,13 @@ class Configure{
             fileId,
         )
     }
+
+    async getFilePreview(fileId){
+        return await this.Bucket.getFilePreview(
+            Config.BucketId,
+            fileId,
+        )
+    }
 }
 
 const configure= new Configure();
