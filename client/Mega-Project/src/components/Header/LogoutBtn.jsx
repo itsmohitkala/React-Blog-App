@@ -1,23 +1,22 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import authService from '../../appwrite/Auth'
-import {login,logout} from '../../store/authSlice'
+import React from "react";
+import { useDispatch } from "react-redux";
+import authService from "../../appwrite/Auth";
+import { logout } from "../../store/authSlice";
+
+
 
 function LogoutBtn() {
 
-    const dispatch= useDispatch()
-   function logoutservice(){
-    authService.logOut()
-    .then(()=>{
-        dispatch(logout())
-    })
-    .catch((err)=>{
-        console.log("Logout error",err);
-    })
-
-   }
+    const dispatch= useDispatch();
+    function logoutService(){
+        authService.logout()
+        .then(dispatch(logout))
+        .catch((error)=>{
+            console.log(error);
+        })
+    }
   return (
-    <button onClick={logoutservice} className='bg-black-200 '>Logout</button>
+    <button onClick={logoutService}>Logout</button>
   )
 }
 
