@@ -9,9 +9,9 @@ function Button({
     ...props
 }) {
   return (
-    <div className={` bg-red-200 ${bgColor} ${textColor} ${className}`} {...props}>
+    <button type={type} className={`bg-red-200 ${bgColor} ${textColor} ${className}`} {...props}>
       {children}
-    </div>
+    </button>
   )
 }
 
