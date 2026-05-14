@@ -40,7 +40,7 @@ function Header() {
       <div>
         <ul>
           {navItems.map((items) => {
-            items.active ? (
+          return  items.active ? (
               <li key={items.name}>
                 <button
                   onClick={() => {

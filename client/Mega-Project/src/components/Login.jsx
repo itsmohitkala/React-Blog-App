@@ -14,6 +14,7 @@ function Login() {
     const {erros,setErrors} = React.useState("");
 
     const login= async(data)=>{
+        console.log(data);
         setErrors('');
         try {
             const session = await authService.login(data)
