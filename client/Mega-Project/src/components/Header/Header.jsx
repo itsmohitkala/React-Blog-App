@@ -56,7 +56,7 @@ function Header() {
       </div>
       {authStatus && <LogoutBtn />}
     </Container>
-  );
+  );  
 }
 
 export default Header;

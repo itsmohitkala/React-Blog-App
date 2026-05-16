@@ -65,6 +65,8 @@ placeHolder="Enter your passcode"
 })}
 />
 
+<button>Sign up</button>
+
 </form>
 </div>
   )

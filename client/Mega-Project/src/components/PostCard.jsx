@@ -1,13 +1,18 @@
 import React from 'react'
-import Configure from '../appwrite/Configure'
+import config from '../config/Config'
+import { Link } from 'react-router'
 
-function PostCard({$id, tittle, featuredImage}) {
-
+function PostCard({featuredImage,title,content,$id}) {
   return (
-    <div className='w-full bg-black-20'>
-        <img src={Configure.getFilePreview(featuredImage)} alt={tittle} />
-        <h2>{tittle}</h2>
+
+<Link to={`/post/${$id}`}>
+    <div>
+      <img src={config.getFilePreview(featuredImage)} alt={title} />
+      <h2>{title}</h2>
+      <p>{content}</p>
+
     </div>
+</Link>
   )
 }
 
