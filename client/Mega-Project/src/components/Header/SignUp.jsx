@@ -29,7 +29,7 @@ try {
        }
     }
 } catch (error) {
-    setErrors(error.message)
+    setErrors(error.message);
 }
     }
   return (
