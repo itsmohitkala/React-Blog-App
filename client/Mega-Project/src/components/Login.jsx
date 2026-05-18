@@ -68,7 +68,7 @@ function Login() {
 
     <button
     type='submit'
-    >Sign in</button>
+    >Sign inn</button>
 </form>
 
     </div>

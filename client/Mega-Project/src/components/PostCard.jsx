@@ -9,7 +9,7 @@ function PostCard({featuredImage,title,content,$id}) {
     <div>
       <img src={config.getFilePreview(featuredImage)} alt={title} />
       <h2>{title}</h2>
-      <p>{content}</p>
+      <p>this is the contenr:{content}</p>
 
     </div>
 </Link>
