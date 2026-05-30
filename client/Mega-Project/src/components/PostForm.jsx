@@ -6,6 +6,7 @@ function PostForm() {
     const {register,handleSubmit} = useForm();
   return (
     <div>PostForm</div>
+    // bhey this is moht 
   )
 }
 
