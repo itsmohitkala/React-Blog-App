@@ -5,6 +5,9 @@ import {useDispatch} from "react-redux"
 import { useSelector } from 'react-redux'
 import configure from '../appwrite/Configure'
 import config from '../config/Config'
+import {Input} from '../components/index'
+import Select from '../components/Header/Select'
+// import Button from '../components/Header/Button'
 
 
 
@@ -47,13 +50,28 @@ function PostForm({post}) {
       })
     }
 
-
-
-
-
   } 
   return (
-    <div>PostForm</div>
+    <form onSubmit={handleSubmit(submit)}>
+
+    <Input 
+    label="Enter title"
+    {...register("title",{required:"title is required"})}
+    />
+    <Input 
+    label='slug'
+    {...register('slug',{required:"slug is required "})}
+    />
+    <Input 
+    label='featured image'
+    {...register('featuredImage',{required:"featured image is requierd "})}
+    accept= 'jpeg/jpg '
+    />
+
+ <button>{post? "update" : "Create Post"}</button>
+
+
+    </form>
   )
 }
 
