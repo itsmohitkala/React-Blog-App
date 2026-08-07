@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import {useNavigate} from 'react-router-dom'
 import {useDispatch} from "react-redux" 
@@ -50,6 +50,27 @@ function PostForm({post}) {
       })
     }
 
+    const slugTransform= useCallback((value)=>{
+      if(value && typeof value==='string'){
+        const slug=value
+        slug
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-zA-Z\d\s]+/g, "-")
+        .replace(/\s/g, "-");
+        
+      }
+
+      useEffect(()=>{
+        const subscription= watch((value,{name})=>{
+          if(name==='title'){
+            setValue('slug',slugTransform(value.title))
+          }
+        })
+      })
+
+    })
+
   } 
   return (
     <form onSubmit={handleSubmit(submit)}>
@@ -61,6 +82,7 @@ function PostForm({post}) {
     <Input 
     label='slug'
     {...register('slug',{required:"slug is required "})}
+    onChange={(e)=>(setValue('slug',slugTransform(e.target.value)))}
     />
     <Input 
     label='featured image'
