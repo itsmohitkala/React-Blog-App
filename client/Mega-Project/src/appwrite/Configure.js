@@ -16,7 +16,7 @@ class Configure{
         this.Bucket= new Storage(this.Client);
     }
 
-    async createDocument({title,slug,content,featuredImage,status}){
+    async createDocument(slug,{title,content,featuredImage,status}){
         try{
             return await this.Databases.createDocument(
                 Config.DatabaseId,
@@ -105,6 +105,21 @@ class Configure{
             fileId,
         )
     }
+
+        async uploadFile(file){
+        try {
+            return await this.bucket.createFile(
+                conf.appwriteBucketId,
+                ID.unique(),
+                file
+            )
+        } catch (error) {
+            console.log("Appwrite serive :: uploadFile :: error", error);
+            return false
+        }
+    }
+
+
 }
 
 const configure= new Configure();

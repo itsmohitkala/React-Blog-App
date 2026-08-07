@@ -13,16 +13,16 @@ name={name  || "content"}
 defaultValue={defaultValue}
 control={control}
 
-render={({field: {onChange}})=>{
-render: <Editor
-name={name}
-initialValue='dmeo'
-init={{
-  height: 500,
-  menubar: false,
+render={({field: {onChange}})=>(
+  <Editor
+  init={
+    innerHeig
+  }
+  />
+)}
 
-  
-/>
+
+
 
 />
 
