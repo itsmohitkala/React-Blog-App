@@ -6,6 +6,11 @@ import Container from "./container/Container";
 import Input from './Input'
 import RTE from "./RTE";
 import PostForm from "./PostForm";
+import Login from './Login'
+import Signup from './Header/SignUp'
+import Button from '../components/Header/Button'
+import PostCard from './PostCard'
+import PostForm from "./PostForm";
 
 export {
     Header,
@@ -15,5 +20,10 @@ export {
     Container,
     Input,
     RTE,
+    PostForm,
+    Login,
+    Signup,
+    Button,
+    PostCard,
     PostForm
 }

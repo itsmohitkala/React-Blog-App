@@ -16,12 +16,10 @@ control={control}
 render={({field: {onChange}})=>(
   <Editor
   init={
-    innerHeig
+    innerHeight=500
   }
   />
 )}
-
-
 
 
 />
