@@ -16,7 +16,7 @@ class Configure{
         this.Bucket= new Storage(this.Client);
     }
 
-    async createDocument(slug,{title,content,featuredImage,status}){
+    async createDocument({title,slug,content,featuredImage,status}){
         try{
             return await this.Databases.createDocument(
                 Config.DatabaseId,
@@ -35,7 +35,7 @@ class Configure{
         }
     }
 
-    async getDocuments(Query= Query.equal("status","active")){
+    async getDocuments(){
         try{
             return await this.Databases.listDocuments(
                 Config.DatabaseId,
