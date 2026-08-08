@@ -35,12 +35,20 @@ class Configure{
         }
     }
 
+    async getPost({slug}) {
+    return await this.database.getDocument({
+        databaseId: config.DatabaseId,
+        collectionId: config.CollectionId,
+        documentId: slug,
+    });
+}
+
     async getDocuments(){
         try{
             return await this.Databases.listDocuments(
                 Config.DatabaseId,
                 Config.CollectionId,
-                Query,
+                
             )
         }catch(error){
             console.log("Appwrite :: Error fetching documents",error);
