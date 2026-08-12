@@ -7,8 +7,10 @@ import configure from '../appwrite/Configure'
 import config from '../config/Config'
 import {Input} from '../components/index'
 import Select from '../components/Header/Select'
+// import Select from '../components/Header/Select'
 // import Button from '../components/Header/Button'
-
+// All the neede imports
+import Container from '../components/index'
 
 
 function PostForm({post}) {
