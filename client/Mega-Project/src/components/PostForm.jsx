@@ -36,7 +36,7 @@ function PostForm({post}) {
 
         const dbPost= await configure.updateDocument(file.$id,{
       ...data,
-      featuredImage= file? file.$id : post.featuredImage
+      featuredImage: file ? file.$id : post.$id
 
     })
     if(dbPost){
