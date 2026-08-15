@@ -9,8 +9,8 @@ function LogoutBtn() {
 
     const dispatch= useDispatch();
     function logoutService(){
-        authService.logout()
-        .then(dispatch(logout))
+        authService.logOut()
+        .then(dispatch(logout()))
         .catch((error)=>{
             console.log(error);
         })
