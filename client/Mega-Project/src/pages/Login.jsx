@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container,Login } from '../components'
+import { Container,Login as LoginForm } from '../components'
 
 function Login() {
   return (
     <div>
         <Container>
-            <Login />
+            <LoginForm />
         </Container>
     </div>
   )

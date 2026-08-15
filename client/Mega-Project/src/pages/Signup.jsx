@@ -1,11 +1,11 @@
 import React from 'react'
-import {Container,Signup} from '../components/index'
+import {Container,Signup as SignupForm} from '../components/index'
 
 function Signup() {
   return (
     <div>
         <Container>
-            <Signup />
+            <SignupForm />
         </Container>
     </div>
   )

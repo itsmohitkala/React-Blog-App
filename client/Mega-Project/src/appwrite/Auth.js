@@ -11,19 +11,22 @@ class AuthService{
         .setProject(Config.ProjectId)
         this.Account= new Account(this.Client);
     }
-        async signUp(email,password,name){
+        async signUp({email,password}){
         try {
-            const response= await this.Account.create(ID.unique(),email,password,name);
-            await this.Account.createEmailSession(email,password,name);
+            const response= await this.Account.create(
+                ID.unique(),
+                 email,
+                 password,
+            );
             return response;
         } catch (error) {
             throw new Error(error);
         }
     }
 
-    async logIn(email,password){
+async logIn(email,password){
         try {
-            return await this.Account.createEmailSession(email,password);
+            return await this.Account.createEmailPasswordSession(email,password);
         } catch (error) {
             throw new Error(error);
         }
@@ -31,7 +34,7 @@ class AuthService{
 
     async logOut(){
         try{
-            return await this.Account.deleteSessions();
+            return  this.Account.deleteSessions();
         }catch(error){
             throw new Error(error);
         }

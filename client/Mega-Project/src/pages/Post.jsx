@@ -57,6 +57,10 @@ function Post() {
     </Container>
 
     </div>
+  ) : (
+    <div>
+        <h3>Login to read posts </h3>
+    </div>
   )
 }
 

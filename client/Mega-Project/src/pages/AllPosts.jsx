@@ -7,14 +7,19 @@ import { PostCard } from '../components'
 function AllPosts() {
 
     const navigate= useNavigate()
+    const [errors,setErrors] =useState('')
     const [posts,setPosts]= useState()
 
      useEffect(()=>{
-        configure.getDocuments().then((post)=>{
+       try {
+         configure.getDocuments().then((post)=>{
             if(post){
                 setPosts(post)
             }
         })
+       } catch (error) {
+        setErrors(error.message)
+       }
     },[navigate])
   return posts? <div>
 <Container>
@@ -26,6 +31,8 @@ function AllPosts() {
 </Container>
   </div> 
   : <div>Pls Login <button onClick={navigate('/login')}>Login</button> </div>
+  {errors && ( <p> {errors}</p>)}
+  
 }
 
 export default AllPosts
