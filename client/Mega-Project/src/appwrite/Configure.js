@@ -1,6 +1,6 @@
 import React from "react";
 import Config from "../config/Config";
-import {Client,Account,Databases,Query,ID} from 'appwrite'
+import {Client,Account,Databases,Query,ID,Storage} from 'appwrite'
 
 class Configure{
         Client = new Client();
