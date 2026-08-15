@@ -5,7 +5,6 @@ import LogoutBtn from "./Header/LogoutBtn";
 import Container from "./container/Container";
 import Input from './Input'
 import RTE from "./RTE";
-import PostForm from "./PostForm";
 import Login from './Login'
 import Signup from './Header/SignUp'
 import Button from '../components/Header/Button'
@@ -20,7 +19,6 @@ export {
     Container,
     Input,
     RTE,
-    PostForm,
     Login,
     Signup,
     Button,
