@@ -98,8 +98,8 @@ class Configure{
         )
     }
 
-    async getFilePreview(fileId){
-        return await this.Bucket.getFilePreview(
+    getFilePreview(fileId){
+        return this.Bucket.getFilePreview(
             config.BucketId,
             fileId,
         )
