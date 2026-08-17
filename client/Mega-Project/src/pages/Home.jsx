@@ -25,9 +25,11 @@ function Home() {
    },[])
   return (
     <Container>
-        <h1>{posts.title}</h1>
-        <p>{posts.content}</p>
-        <img src={configure.getFilePreview(posts.featuredImage)} alt={posts.title} />
+        <div className="mx-auto max-w-3xl rounded-lg border border-[var(--color-border)] bg-white p-6 shadow-sm">
+          <h1 className="mb-3 text-2xl font-bold text-[var(--color-ink)]">{posts.title}</h1>
+          <p className="mb-4 text-[var(--color-muted)]">{posts.content}</p>
+          <img src={configure.getFilePreview(posts.featuredImage)} alt={posts.title} className="w-full rounded-md object-cover" />
+        </div>
     </Container>
   )
 }

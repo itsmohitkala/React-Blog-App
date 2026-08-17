@@ -31,11 +31,11 @@ function SignUp() {
     }
   };
   return (
-    <div>
+    <div className="mx-auto flex w-full max-w-md flex-col items-center rounded-lg border border-[var(--color-border)] bg-white p-8 shadow-sm">
       <Logo />
-      <h1>Sign Up !!</h1>
-      {errors && <p className="bg-red-200">{errors}</p>}
-      <form onSubmit={handleSubmit(createUser)}>
+      <h1 className="mt-4 text-xl font-bold text-[var(--color-ink)]">Sign Up !!</h1>
+      {errors && <p className="mt-3 w-full rounded-md bg-red-50 px-3 py-2 text-sm text-red-600">{errors}</p>}
+      <form onSubmit={handleSubmit(createUser)} className="mt-6 w-full space-y-4">
         <Input
           label="Name :"
           placeholder="Enter your name"
@@ -63,7 +63,7 @@ function SignUp() {
           })}
         />
 
-        <button type="submit" onClick={createUser}>Sign up</button>
+        <button type="submit" onClick={createUser} className="w-full rounded-md bg-[var(--color-brand)] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[var(--color-brand-dark)]">Sign up</button>
       </form>
     </div>
   );
