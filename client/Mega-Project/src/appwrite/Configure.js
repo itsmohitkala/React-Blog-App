@@ -15,24 +15,14 @@ class Configure{
         this.Databases= new Databases(this.Client);
         this.Bucket= new Storage(this.Client);
     }
-
-    async createDocument({title,slug,content,featuredImage,status}){
-        try{
-            return await this.Databases.createDocument(
-                Config.DatabaseId,
-                Config.CollectionId,
-                slug,
-                {
-                    title,
-                    content,
-                    featuredImage,
-                    status,
-                }
-            )
-
-        }catch(error){
-            console.log("Appwrite :: Error creating document",error);
-        }
+    async createDocument({slug,title,content,featuredImage,status, userId}){
+        return await this.database.createDocument({
+            databaseId:config.DatabaseId,
+            collectionId:config.CollectionId,
+            documentId:ID.unique(),
+            data:{title,content,featuredImage,status},
+            userId: userId,
+        });
     }
 
     async getPost({slug}) {
@@ -116,8 +106,8 @@ class Configure{
 
         async uploadFile(file){
         try {
-            return await this.bucket.createFile(
-                conf.appwriteBucketId,
+            return await this.Bucket.createFile(
+                Config.BucketId,
                 ID.unique(),
                 file
             )
