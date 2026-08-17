@@ -4,7 +4,7 @@ import { Navigate } from "react-router";
 import { useDispatch } from "react-redux";
 import authService from "../appwrite/Auth";
 import configure from "../appwrite/Configure";
-import { Container } from "../components";
+import { Container, PostCard } from "../components";
 import { useSelector } from "react-redux";
 
 function Home() {
@@ -20,7 +20,7 @@ function Home() {
     try {
       configure.getDocuments().then((post) => {
         if (post) {
-          setPosts(post);
+          setPosts(post.documents);
         }
       });
     } catch (error) {
@@ -64,7 +64,13 @@ function Home() {
 
       )}
     </div>
-  ) : null
+  ) : (
+    <Container>
+        {posts.map((post)=>{
+            <PostCard />
+        })}
+    </Container>
+  )
 
 
 }

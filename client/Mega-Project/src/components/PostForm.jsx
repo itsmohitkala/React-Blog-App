@@ -46,12 +46,14 @@ function PostForm({ post }) {
     } else {
       
       const file = await configure.uploadFile(data.featuredImage[0]);
-      console.log(data);
-      const dbPost = configure.createDocument({
+      const dbPost = await configure.createDocument({
         ...data,
         featuredImage: file.$id,
         userId: userData.$id
       });
+      if (dbPost) {
+        navigate(`/post/${dbPost.$id}`);
+      }
     }
 
 
