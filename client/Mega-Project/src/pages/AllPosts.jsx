@@ -23,15 +23,20 @@ function AllPosts() {
     },[navigate])
   return posts? (<div>
 <Container>
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {posts.map((post)=>{
-        <PostCard 
+        <PostCard
         {...post}
         />
     })}
+    </div>
 </Container>
   </div> )
-  : <div>Pls Login <button onClick={navigate('/login')}>Login</button> </div>
-  {errors && ( <p> {errors}</p>)}
+  : <div className="flex flex-col items-center gap-4 py-16 text-center">
+      <p className="text-[var(--color-muted)]">Pls Login</p>
+      <button onClick={navigate('/login')} className="rounded-md bg-[var(--color-brand)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--color-brand-dark)]">Login</button>
+    </div>
+  {errors && ( <p className="text-center text-sm text-red-600"> {errors}</p>)}
   
 }
 
