@@ -1,5 +1,5 @@
 import React from "react";
-import Config from "../config/Config";
+import config from "../config/Config";
 import {Client,Account,Databases,Query,ID,Storage} from 'appwrite'
 
 class Configure{
@@ -10,23 +10,23 @@ class Configure{
     constructor(){
 
         this.Client
-        .setEndpoint(Config.AppwriteUrl)
-        .setProject(Config.ProjectId)
+        .setEndpoint(config.AppwriteUrl)
+        .setProject(config.ProjectId)
         this.Databases= new Databases(this.Client);
         this.Bucket= new Storage(this.Client);
     }
     async createDocument({slug,title,content,featuredImage,status, userId}){
-        return await this.database.createDocument({
+        return await this.Databases.createDocument({
             databaseId:config.DatabaseId,
             collectionId:config.CollectionId,
             documentId:ID.unique(),
+            userId:userId,
             data:{title,content,featuredImage,status},
-            userId: userId,
         });
     }
 
     async getPost({slug}) {
-    return await this.database.getDocument({
+    return await this.Databases.getDocument({
         databaseId: config.DatabaseId,
         collectionId: config.CollectionId,
         documentId: slug,
@@ -36,8 +36,8 @@ class Configure{
     async getDocuments(){
         try{
             return await this.Databases.listDocuments(
-                Config.DatabaseId,
-                Config.CollectionId,
+                config.DatabaseId,
+                config.CollectionId,
                 
             )
         }catch(error){
@@ -45,17 +45,18 @@ class Configure{
         }
     }
 
-    async updateDocument(slug,{title,content,featuredImage,status}){
+    async updateDocument(slug,{title,content,featuredImage,status,userId}){
         try {
             return await this.Databases.updateDocument(
-                Config.DatabaseId,
-                Config.CollectionId,
+                config.DatabaseId,
+                config.CollectionId,
                 slug,
                 {
                     title,
                     content,
                     featuredImage,
                     status,
+                    userId:userId
                 }
 
             )
@@ -66,8 +67,8 @@ class Configure{
 
     async deleteDocuments(slug){
         return await this.Databases.deleteDocument(
-            Config.DatabaseId,
-            Config.CollectionId,
+            config.DatabaseId,
+            config.CollectionId,
             slug,
         )
     }
@@ -76,7 +77,7 @@ class Configure{
 
     async createFile(file){
         return await this.Bucket.createFile(
-            Config.BucketId,
+            config.BucketId,
             ID.unique(),
             file
 
@@ -85,21 +86,21 @@ class Configure{
 
     async getFile(fileId){
         return await this.Bucket.getFile(
-            Config.BucketId,
+            config.BucketId,
             fileId,
         )
     }
 
     async deleteFile(fileId){
         return await this.Bucket.deleteFile(
-            Config.BucketId,
+            config.BucketId,
             fileId,
         )
     }
 
-    async getFilePreview(fileId){
-        return await this.Bucket.getFilePreview(
-            Config.BucketId,
+    getFilePreview(fileId){
+        return this.Bucket.getFilePreview(
+            config.BucketId,
             fileId,
         )
     }
@@ -107,7 +108,7 @@ class Configure{
         async uploadFile(file){
         try {
             return await this.Bucket.createFile(
-                Config.BucketId,
+                config.BucketId,
                 ID.unique(),
                 file
             )
