@@ -7,6 +7,7 @@ class Config{
     DatabaseId= String(import.meta.env.VITE_DatabaseId)
     BucketId= String(import.meta.env.VITE_BucketId)
     CollectionId= String(import.meta.env.VITE_CollectionId)
+    TinyMCEAPIKey= String(import.meta.env.VITE_TinyMCEApiKey)
 }
 
 const config= new Config();
