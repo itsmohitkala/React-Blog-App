@@ -31,14 +31,15 @@ function Login() {
     }
   };
   return (
-    <div>
+    <div className="mx-auto flex w-full max-w-md flex-col items-center rounded-lg border border-[var(--color-border)] bg-white p-8 shadow-sm">
       <Logo />
-      <h2>Login to your account</h2>
-      <p>Do you have an account? Login here.</p>
-      <Link to="/signup">Sign Up</Link>
-      {errors && <p className="color-red-200"> {errors}</p>}
+      <h2 className="mt-4 text-xl font-bold text-[var(--color-ink)]">Login to your account</h2>
+      <p className="mt-2 text-sm text-[var(--color-muted)]">
+        Do you have an account? <Link to="/signup" className="font-medium text-[var(--color-brand)] hover:underline">Sign Up</Link>
+      </p>
+      {errors && <p className="mt-3 w-full rounded-md bg-red-50 px-3 py-2 text-sm text-red-600"> {errors}</p>}
 
-      <form onSubmit={handleSubmit(loginhandler)}>
+      <form onSubmit={handleSubmit(loginhandler)} className="mt-6 w-full space-y-4">
         <Input
           className="mb-4"
           type="email"
@@ -54,7 +55,7 @@ function Login() {
           {...register("password", { required: true })}
         />
 
-        <button type="submit">Sign inn</button>
+        <button type="submit" className="w-full rounded-md bg-[var(--color-brand)] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[var(--color-brand-dark)]">Sign inn</button>
       </form>
     </div>
   );

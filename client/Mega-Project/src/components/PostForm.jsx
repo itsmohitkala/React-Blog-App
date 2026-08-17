@@ -75,7 +75,7 @@ function PostForm({ post }) {
 
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
+    <form onSubmit={handleSubmit(submit)} className="mx-auto flex w-full max-w-2xl flex-col gap-5 rounded-lg border border-[var(--color-border)] bg-white p-8 shadow-sm">
       <Input
         label="Enter title"
         {...register("title", { required: "title is required" })}
@@ -86,11 +86,14 @@ function PostForm({ post }) {
         onChange={(e) => setValue("slug", slugTransform(e.target.value))}
       />
 
-      <RTE
-        control={control}
-        name="content"
-        defaultValue={getValues("content")}
-      />
+      <div>
+        <label className="mb-1 block text-sm font-medium text-[var(--color-ink)]">Content</label>
+        <RTE
+          control={control}
+          name="content"
+          defaultValue={getValues("content")}
+        />
+      </div>
 
       <Input
         label="featured image"
@@ -98,15 +101,18 @@ function PostForm({ post }) {
         {...register("featuredImage", {
           required: "featured image is requierd ",
         })}
-       
+
       />
 
-<select {...register("status")}>  
-<option value='active'>Active</option>
-<option value='unactive'> Unactive</option>
+      <div>
+        <label className="mb-1 block text-sm font-medium text-[var(--color-ink)]">Status</label>
+        <select {...register("status")} className="w-full rounded-md border border-[var(--color-border)] px-3 py-2 text-sm text-[var(--color-ink)] outline-none transition-colors focus:border-[var(--color-brand)] focus:ring-1 focus:ring-[var(--color-brand)]">
+          <option value='active'>Active</option>
+          <option value='unactive'> Unactive</option>
+        </select>
+      </div>
 
-</select>
-      <button>{post ? "update" : "Create Post"}</button>
+      <button className="w-full rounded-md bg-[var(--color-brand)] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[var(--color-brand-dark)]">{post ? "update" : "Create Post"}</button>
     </form>
   );
 }

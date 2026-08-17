@@ -16,7 +16,12 @@ function LogoutBtn() {
         })
     }
   return (
-    <button onClick={logoutService}>Logout</button>
+    <button
+      onClick={logoutService}
+      className="rounded-md border border-[var(--color-border)] px-3 py-2 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-gray-100"
+    >
+      Logout
+    </button>
   )
 }
 

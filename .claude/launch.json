@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Mega-Project",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "client/Mega-Project", "run", "dev"],
+      "port": 5173
+    }
+  ]
+}
