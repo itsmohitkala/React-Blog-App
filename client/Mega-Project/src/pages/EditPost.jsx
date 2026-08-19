@@ -10,6 +10,7 @@ function EditPost() {
     const [posts,setPosts]= useState([])
     const navigate=useNavigate
     const slug=useParams()
+    c
 
     useEffect(()=>{
         if(slug){
@@ -28,7 +29,12 @@ function EditPost() {
             post={posts}
         </PostForm>
     </div>
-  ) : null
+  ) : (
+    <div>
+        <h1>Posts Doesn't Exists</h1>
+        <p>Create Post! </p>
+    </div>
+  )
 }
 
 export default EditPost
