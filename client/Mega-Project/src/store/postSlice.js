@@ -24,6 +24,8 @@ const postSlice = createSlice({
 
 // Post slice
 
+//hoi 
+
 
 export default postSlice.reducer;
 export const {getPosts,deletePost} = postSlice.actions;

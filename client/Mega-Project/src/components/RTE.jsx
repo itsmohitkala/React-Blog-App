@@ -3,7 +3,7 @@ import { Controller } from 'react-hook-form'
 import { Editor } from '@tinymce/tinymce-react';
 import { useForm } from 'react-hook-form';
 import config from '../config/Config';
-
+//hoi
 
 function RTE({name,control,defaultValue=""}) {
   const {handleSubmit,register} = useForm()
