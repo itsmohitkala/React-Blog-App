@@ -7,6 +7,7 @@ import configure from "../appwrite/Configure";
 import config from "../config/Config";
 import { Input, Container, RTE } from "../components/index";
 import Select from "../components/Header/Select";
+
 // import Select from '../components/Header/Select'
 // import Button from '../components/Header/Button'
 // All the neede imports
@@ -52,6 +53,7 @@ function PostForm({ post }) {
         userId: userData.$id
       });
       if (dbPost) {
+        
         navigate(`/post/${dbPost.$id}`);
       }
     }
