@@ -1,6 +1,7 @@
 import React from 'react'
 import config from '../config/Config'
 import { Link } from 'react-router'
+//hoi
 
 function PostCard({featuredImage,title,content,$id}) {
   return (
