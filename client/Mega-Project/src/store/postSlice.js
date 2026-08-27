@@ -14,10 +14,15 @@ const postSlice = createSlice({
 
         deletePost: (state, action) => {
             state.posts = state.posts.filter((post) => post.id == action.payload.id)
+        },
+        createPost:(state,action)=>{
+            posts= action.payload
         }
     }
-}
+} 
 )
+
+// Post slice
 
 
 export default postSlice.reducer;
